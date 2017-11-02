@@ -1,0 +1,161 @@
+<div class="container">
+  <form (ngSubmit)="createUser()" #f="ngForm">
+    <div class="form-group">
+      <label for="userName">Username</label>
+      <input name="userName"
+             id="userName"
+             ngModel=""
+             required=""
+             placeholder="username"
+             type="text"
+             class="form-control"
+             #userName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!userName.valid && userName.touched">
+            Please enter username!
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input name="email"
+             id="email"
+             ngModel=""
+             required=""
+             placeholder="email"
+             type="email"
+             class="form-control"
+             #email="ngModel"
+             email/>
+      <span class="help-block"
+            *ngIf="!email.valid && email.touched">
+            Please enter email!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input name="firstName"
+             id="firstName"
+             ngModel=""
+             required=""
+             placeholder="First Name"
+             type="text"
+             class="form-control"
+             #firstName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!firstName.valid && firstName.touched">
+            Please enter firstName!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input name="lastName"
+             id="lastName"
+             ngModel=""
+             required=""
+             placeholder="Last Name"
+             type="text"
+             class="form-control"
+             #lastName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!lastName.valid && lastName.touched">
+            Please enter lastName!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input name="password"
+             id="password"
+             ngModel=""
+             required=""
+             placeholder="password"
+             type="password"
+             class="form-control"
+             #password="ngModel"/>
+      <span class="help-block"
+            *ngIf="!password.valid && password.touched">
+            Please enter a password!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="verifyPassword">Verify Password</label>
+      <input name="verifyPassword"
+             id="verifyPassword"
+             ngModel=""
+             required
+             placeholder="verify password"
+             type="password"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+      <span class="help-block"
+            *ngIf="!verifyPassword.valid && verifyPassword.touched && isPasswordVerified()">
+            Your passwords do not match!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="Address">Address:</label>
+      <input name="Address"
+             id="Address"
+             ngModel=""
+             placeholder="Enter your Address"
+             type="text"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="apartment">Apartment Number:</label>
+      <input name="apartment"
+             id="apartment"
+             ngModel=""
+             placeholder="Enter your Apartment Number"
+             type="text"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input name="city"
+             id="city"
+             ngModel=""
+             placeholder="Enter your City"
+             type="text"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input name="state"
+             id="state"
+             ngModel=""
+             placeholder="Enter your State"
+             type="text"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input name="country"
+             id="country"
+             ngModel=""
+             placeholder="Enter your State"
+             type="text"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+    </div>
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block"
+              [disabled]="!f.valid">
+        Register
+      </button>
+    </div>
+    <div class="form-group">
+      <a class="btn btn-danger btn-block"
+         routerLink="/login">
+        Cancel
+      </a>
+    </div>
+  </form>
+</div>
